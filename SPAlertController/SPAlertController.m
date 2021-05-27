@@ -597,6 +597,7 @@
     IMP imp = [_target methodForSelector:selector];
     void (*func)(id, SEL,SPAlertControllerActionView *) = (void *)imp;
     func(_target, selector, self);
+    sender.backgroundColor = [SPColorStyle normalColor];
 }
 
 - (void)touchDown:(UIButton *)sender {
