@@ -46,6 +46,7 @@ typedef NS_ENUM(NSInteger, SPAlertActionStyle) {
 + (instancetype)sharedInstance;
 @property(nonatomic, assign) CGFloat lineWidth;
 @property(nonatomic, assign) CGFloat actionHeight;
+@property(nonatomic, assign) CGFloat headerActionLineWidth;
 @end
 
 @interface SPAlertAction : NSObject <NSCopying>

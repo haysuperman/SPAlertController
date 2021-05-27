@@ -1061,8 +1061,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavi];
-    [[SPAlertStyle sharedInstance] setActionHeight:30];
-    [[SPAlertStyle sharedInstance] setLineWidth:0];
+    [[SPAlertStyle sharedInstance] setActionHeight:45];
+//    [[SPAlertStyle sharedInstance] setLineWidth:3];
     dic = [NSMutableDictionary dictionaryWithCapacity:2];
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];

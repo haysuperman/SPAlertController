@@ -12,6 +12,8 @@
 #define SP_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 #define SP_LINE_WIDTH [[SPAlertStyle sharedInstance] lineWidth]
+#define SP_HEADER_ACTION_LINE_WIDTH [[SPAlertStyle sharedInstance] headerActionLineWidth]
+
 
 #define Is_iPhoneX MAX(SP_SCREEN_WIDTH, S P_SCREEN_HEIGHT) >= 812
 #define SP_STATUS_BAR_HEIGHT (Is_iPhoneX ? 44 : 20)
@@ -22,12 +24,15 @@
 
 @end
 @implementation SPAlertStyle
-
+- (CGFloat)headerActionLineWidth
+{
+    return _headerActionLineWidth;
+}
 - (CGFloat)lineWidth
 {
-//    if (!_lineWidth) {
-//        return 1.0 / [UIScreen mainScreen].scale;
-//    }
+    if (_lineWidth < 0) {
+        return 1.0 / [UIScreen mainScreen].scale;
+    }
     return _lineWidth;
 }
 
@@ -1443,7 +1448,7 @@ UIEdgeInsets UIEdgeInsetsAddEdgeInsets(UIEdgeInsets i1,UIEdgeInsets i2) {
     if (!self.componentView.superview) {
         [headerActionLineConstraints addObject:[NSLayoutConstraint constraintWithItem:headerActionLine attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:actionSequenceView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0]];
     }
-    [headerActionLineConstraints addObject:[NSLayoutConstraint constraintWithItem:headerActionLine attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:SP_LINE_WIDTH]];
+    [headerActionLineConstraints addObject:[NSLayoutConstraint constraintWithItem:headerActionLine attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:SP_HEADER_ACTION_LINE_WIDTH]];
 
     [NSLayoutConstraint activateConstraints:headerActionLineConstraints];
     self.headerActionLineConstraints = headerActionLineConstraints;
