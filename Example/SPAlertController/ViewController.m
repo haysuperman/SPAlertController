@@ -52,14 +52,17 @@
 - (void)actionSheetTest1 {
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:@"我是主标题" message:@"我是副标题" preferredStyle:SPAlertControllerStyleActionSheet];
     alertController.needDialogBlur = _lookBlur;
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"Default" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"Default" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了Default ");
     }];
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"Destructive" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"Destructive" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了Destructive");
     }];
 
-    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"Cancel" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"Cancel" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了Cancel");
     }];
     [alertController addAction:action1];
@@ -72,10 +75,12 @@
 - (void)actionSheetTest2 {
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:@"我是主标题" message:@"我是副标题" preferredStyle:SPAlertControllerStyleActionSheet];
     alertController.needDialogBlur = _lookBlur;
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"Default" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"Default" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了Default ");
     }];
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"Destructive" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"Destructive" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了Destructive");
     }];
     
@@ -89,13 +94,16 @@
 // 示例3:actionSheet从顶部弹出(无标题)
 - (void)actionSheetTest3 {
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:nil message:nil preferredStyle:SPAlertControllerStyleActionSheet animationType:SPAlertAnimationTypeFromTop];
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第1个");
     }];
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第2个");
     }];
-    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第3个");
     }];
     [alertController addAction:action1];
@@ -109,14 +117,17 @@
 - (void)actionSheetTest4 {
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:nil message:@"我是副标题" preferredStyle:SPAlertControllerStyleActionSheet animationType:SPAlertAnimationTypeFromTop];
     
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第1个");
     }];
     // SPAlertActionStyleDestructive默认文字为红色(可修改)
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第2个");
     }];
-    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第3个");
     }];
     action3.titleColor = SPColorRGBA(30, 170, 40, 1);
@@ -132,19 +143,24 @@
 - (void)actionSheetTest5 {
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:@"我是主标题" message:@"我是副标题" preferredStyle:SPAlertControllerStyleActionSheet animationType:SPAlertAnimationTypeDefault];
     alertController.actionAxis = UILayoutConstraintAxisHorizontal;
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第1个");
     }];
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第2个");
     }];
-    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第3个");
     }];
-    SPAlertAction *action4 = [SPAlertAction actionWithTitle:@"第4个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action4 = [SPAlertAction actionWithTitle:@"第4个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第4个");
     }];
-    SPAlertAction *action5 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action5 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了取消");
     }];
     // 注:在addAction之后设置action的文字颜色和字体同样有效
@@ -161,16 +177,20 @@
 - (void)actionSheetTest6 {
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:@"我是主标题" message:@"我是副标题" preferredStyle:SPAlertControllerStyleActionSheet animationType:SPAlertAnimationTypeDefault];
     alertController.actionAxis = UILayoutConstraintAxisHorizontal;
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第1个");
     }];
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第2个");
     }];
-    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第3个");
     }];
-    SPAlertAction *action4 = [SPAlertAction actionWithTitle:@"第4个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action4 = [SPAlertAction actionWithTitle:@"第4个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第4个");
     }];
     // 注:在addAction之后设置action的文字颜色和字体同样有效
@@ -185,21 +205,24 @@
 // 示例7:actionSheet action上有图标
 - (void)actionSheetTest7 {
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:nil message:nil preferredStyle:SPAlertControllerStyleActionSheet animationType:SPAlertAnimationTypeDefault];
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"视频通话" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"视频通话" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了‘视频通话’");
     }];
     action1.image = [[UIImage imageNamed:@"video"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     action1.tintColor = [UIColor colorPairsWithLightColor:[UIColor blackColor] darkColor:[UIColor whiteColor]];
     action1.imageTitleSpacing = 5;
     
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"语音通话" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"语音通话" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了‘语音通话’");
     }];
     action2.image = [[UIImage imageNamed:@"telephone"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     action2.tintColor = [UIColor colorPairsWithLightColor:[UIColor blackColor] darkColor:[UIColor whiteColor]];
     action2.imageTitleSpacing = 5;
     
-    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"取消");
     }];
     // 注:在addAction之后设置action的文字颜色和字体同样有效
@@ -213,27 +236,34 @@
 // 示例8:actionSheet 模拟多分区样式
 - (void)actionSheetTest8 {
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:@"我是主标题" message:@"我是副标题" preferredStyle:SPAlertControllerStyleActionSheet];
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第1个");
     }];
     action1.titleColor = [UIColor orangeColor];
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第2个");
     }];
     action2.titleColor = [UIColor orangeColor];
-    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第3个");
     }];
-    SPAlertAction *action4 = [SPAlertAction actionWithTitle:@"第4个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action4 = [SPAlertAction actionWithTitle:@"第4个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第4个");
     }];
-    SPAlertAction *action5 = [SPAlertAction actionWithTitle:@"第5个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action5 = [SPAlertAction actionWithTitle:@"第5个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第5个");
     }];
-    SPAlertAction *action6 = [SPAlertAction actionWithTitle:@"第6个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action6 = [SPAlertAction actionWithTitle:@"第6个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第6个");
     }];
-    SPAlertAction *action7 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action7 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"取消");
     }];
     action7.titleColor = SYSTEM_BLUE_COLOR;
@@ -263,11 +293,13 @@
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:@"我是主标题" message:@"我是副标题" preferredStyle:SPAlertControllerStyleAlert animationType:SPAlertAnimationTypeDefault];
     alertController.needDialogBlur = _lookBlur;
 
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"确定" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"确定" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了确定");
     }];
     // SPAlertActionStyleDestructive默认文字为红色(可修改)
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了取消");
     }];
     // 设置第2个action的颜色
@@ -282,16 +314,19 @@
 - (void)alertTest2 {
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:@"我是主标题" message:@"我是副标题" preferredStyle:SPAlertControllerStyleAlert animationType:SPAlertAnimationTypeExpand];
     _alertController = alertController;
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第1个");
     }];
     // 设置第1个action的颜色
     action1.titleColor = SYSTEM_BLUE_COLOR;
     // SPAlertActionStyleDestructive默认文字为红色(可修改)
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点点击了第2个");
     }];
-    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点点击了第3个");
     }];
     [alertController addAction:action1];
@@ -304,14 +339,16 @@
 - (void)alertTest3 {
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:@"我是主标题" message:@"我是副标题" preferredStyle:SPAlertControllerStyleAlert animationType:SPAlertAnimationTypeFade];
 
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"确定" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"确定" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了确定");
     }];
     // 设置第1个action的字体
     action1.titleColor = SYSTEM_BLUE_COLOR;
     
     // SPAlertActionStyleDestructive默认文字为红色(可修改)
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了取消");
     }];
     action2.titleColor = [UIColor redColor];
@@ -329,14 +366,16 @@
     // 2个按钮时默认是水平排列，这里强制垂直排列
     alertController.actionAxis = UILayoutConstraintAxisVertical;
 
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"确定" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"确定" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了确定");
     }];
     // 设置第1个action的颜色
     action1.titleColor = [UIColor redColor];
     
     // SPAlertActionStyleDestructive默认文字为红色(可修改)
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了取消");
     }];
     action2.titleColor = SYSTEM_BLUE_COLOR;
@@ -354,18 +393,21 @@
     // 2个按钮以上默认是垂直排列，这里强制设置水平排列
     alertController.actionAxis = UILayoutConstraintAxisHorizontal;
     
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第1个");
     }];
     // 设置第1个action的字体
     action1.titleColor = SYSTEM_BLUE_COLOR;
     
     // SPAlertActionStyleDestructive默认文字为红色(可修改)
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第2个");
     }];
     action2.titleColor = [UIColor magentaColor];
-    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第3个");
     }];
     
@@ -383,7 +425,8 @@
     // 设置图标
     alertController.image = [UIImage imageNamed:@"zhiwen"];
     
-    SPAlertAction *action = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了取消");
     }];
     action.titleColor = SYSTEM_BLUE_COLOR;
@@ -396,11 +439,13 @@
 
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:@"我是主标题" message:@"我是副标题" preferredStyle:SPAlertControllerStyleAlert animationType:SPAlertAnimationTypeShrink];
 
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"取消");
     }];
     action1.titleColor = [UIColor redColor];
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"确定" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"确定" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"确定");
     }];
     action2.titleColor = SYSTEM_BLUE_COLOR;
@@ -434,7 +479,8 @@
 // 示例16:富文本(action设置富文本)
 - (void)attributedStringTest1 {
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:nil message:nil preferredStyle:SPAlertControllerStyleActionSheet animationType:SPAlertAnimationTypeDefault];
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:nil style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:nil style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了拍摄");
     }];
     NSString *mainTitle1 = @"拍摄";
@@ -454,11 +500,13 @@
 
     action1.attributedTitle = attrTitle1; // 设置富文本标题
 
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"从手机相册选择" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"从手机相册选择" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了'从手机相册选择'");
     }];
 
-    SPAlertAction *action3 = [SPAlertAction actionWithTitle:nil style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action3 = [SPAlertAction actionWithTitle:nil style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了'用微视拍摄'");
     }];
     NSString *mainTitle3 = @"用微视拍摄";
@@ -478,7 +526,8 @@
     
     action3.attributedTitle = attrTitle3; // 设置富文本标题
     
-    SPAlertAction *action4 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action4 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了取消");
     }];
 
@@ -500,11 +549,13 @@
     [attrTitle addAttribute:NSForegroundColorAttributeName value:SYSTEM_BLUE_COLOR range:[totalTitle rangeOfString:num]];
     alertController.attributedTitle = attrTitle;
     
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了取消");
     }];
     // SPAlertActionStyleDestructive默认文字为红色(可修改)
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"确定" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"确定" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了确定");
     }];
     action2.titleColor = SYSTEM_BLUE_COLOR;
@@ -546,11 +597,13 @@
     // 一定要更新高度，因为对sendAlertView的contentImage赋值之后，高度改变了，自定义view的frame发生改变需要告诉SPAlertController
     [alertController updateCustomViewSize:[sendAlertView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize]];
 
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了取消");
     }];
     // SPAlertActionStyleDestructive默认文字为红色(可修改)
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"发送" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"发送" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了发送");
     }];
 
@@ -646,14 +699,16 @@
     // 插入一个view
     [alertController insertComponentView:centerView];
 
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第1个");
     }];
     // 设置第1个action的颜色
     action1.titleColor = SYSTEM_BLUE_COLOR;
     
     // SPAlertActionStyleDestructive默认文字为红色(可修改)
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第2个");
     }];
     
@@ -709,54 +764,70 @@
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:@"请滑动查看更多内容" message:@"谢谢" preferredStyle:SPAlertControllerStyleActionSheet animationType:SPAlertAnimationTypeDefault];
     alertController.minDistanceToEdges = 100;
     
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第1个");
     }];
     // SPAlertActionStyleDestructive默认文字为红色(可修改)
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第2个");
     }];
     // SPAlertActionStyleDestructive默认文字为红色(可修改)
-    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第3个");
     }];
-    SPAlertAction *action4 = [SPAlertAction actionWithTitle:@"第4个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action4 = [SPAlertAction actionWithTitle:@"第4个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第4个");
     }];
-    SPAlertAction *action5 = [SPAlertAction actionWithTitle:@"第5个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action5 = [SPAlertAction actionWithTitle:@"第5个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第5个");
     }];
-    SPAlertAction *action6 = [SPAlertAction actionWithTitle:@"第6个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action6 = [SPAlertAction actionWithTitle:@"第6个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第6个");
     }];
-    SPAlertAction *action7 = [SPAlertAction actionWithTitle:@"第7个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action7 = [SPAlertAction actionWithTitle:@"第7个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第7个");
     }];
-    SPAlertAction *action8 = [SPAlertAction actionWithTitle:@"第8个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action8 = [SPAlertAction actionWithTitle:@"第8个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第8个");
     }];
-    SPAlertAction *action9 = [SPAlertAction actionWithTitle:@"第9个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action9 = [SPAlertAction actionWithTitle:@"第9个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第9个");
     }];
-    SPAlertAction *action10 = [SPAlertAction actionWithTitle:@"第10个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action10 = [SPAlertAction actionWithTitle:@"第10个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第10个");
     }];
-    SPAlertAction *action11 = [SPAlertAction actionWithTitle:@"第11个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action11 = [SPAlertAction actionWithTitle:@"第11个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第11个");
     }];
-    SPAlertAction *action12 = [SPAlertAction actionWithTitle:@"第12个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action12 = [SPAlertAction actionWithTitle:@"第12个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第12个");
     }];
-    SPAlertAction *action13 = [SPAlertAction actionWithTitle:@"第13个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action13 = [SPAlertAction actionWithTitle:@"第13个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第13个");
     }];
-    SPAlertAction *action14 = [SPAlertAction actionWithTitle:@"第14个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action14 = [SPAlertAction actionWithTitle:@"第14个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第14个");
     }];
-    SPAlertAction *action15 = [SPAlertAction actionWithTitle:@"第15个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action15 = [SPAlertAction actionWithTitle:@"第15个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第15个");
     }];
-    SPAlertAction *action16 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action16 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了取消");
     }];
     
@@ -783,24 +854,30 @@
 // 示例29:当文字和按钮同时过多时，文字占据更多位置
 - (void)specialtest2 {
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:@"请滑动查看更多内容" message:@"谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢" preferredStyle:SPAlertControllerStyleActionSheet animationType:SPAlertAnimationTypeDefault];
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第1个");
     }];
     // SPAlertActionStyleDestructive默认文字为红色(可修改)
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第2个");
     }];
-    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"第3个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第3个");
     }];
-    SPAlertAction *action4 = [SPAlertAction actionWithTitle:@"第4个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action4 = [SPAlertAction actionWithTitle:@"第4个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第4个");
     }];
-    SPAlertAction *action5 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action5 = [SPAlertAction actionWithTitle:@"取消" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了取消");
     }];
     
-    SPAlertAction *action6 = [SPAlertAction actionWithTitle:@"第5个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action6 = [SPAlertAction actionWithTitle:@"第5个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第5个");
     }];
     
@@ -817,12 +894,14 @@
 // 示例30:含有文本输入框，且文字过多,默认会滑动到第一个文本输入框的位置
 - (void)specialtest3 {
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:@"请滑动查看更多内容" message:@"谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢" preferredStyle:SPAlertControllerStyleAlert animationType:SPAlertAnimationTypeNone];
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"第1个" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第1个");
     }];
     
     // SPAlertActionStyleDestructive默认文字为红色(可修改)
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"第2个" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了第2个");
     }];
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
@@ -845,10 +924,12 @@
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:@"提示" message:@"SPAlertControllerStyleAlert样式下2个按钮默认是水平排列，如果存在按钮文字过长，则自动会切换为垂直排列，除非外界设置了'actionAxis'。如果垂直排列后文字依然过长，则会压缩字体适应宽度，压缩到0.5倍封顶" preferredStyle:SPAlertControllerStyleAlert animationType:SPAlertAnimationTypeDefault];
     alertController.messageColor = [UIColor redColor];
     
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"明白" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"明白" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了明白");
     }];
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"我的文字太长了，所以垂直排列显示更多文字，垂直后依然显示不全则压缩字体，压缩到0.5倍封顶" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"我的文字太长了，所以垂直排列显示更多文字，垂直后依然显示不全则压缩字体，压缩到0.5倍封顶" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了'上九天揽月，下五洋捉鳖'");
     }];
     action2.titleColor = SYSTEM_BLUE_COLOR;
@@ -867,11 +948,13 @@
     // 强制水平排列
     alertController.actionAxis = UILayoutConstraintAxisHorizontal;
     
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"明白" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"明白" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了明白");
     }];
     
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"我的文字太长了，会压缩字体" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"我的文字太长了，会压缩字体" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了'我的文字太长了，会压缩字体'");
     }];
     action2.titleColor = SYSTEM_BLUE_COLOR;
@@ -890,14 +973,17 @@
     
     alertController.needDialogBlur = _lookBlur;
     
-    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"Default" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action1 = [SPAlertAction actionWithTitle:@"Default" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了Default");
     }];
     
-    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"Destructive" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action2 = [SPAlertAction actionWithTitle:@"Destructive" style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了Destructive");
     }];
-    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"Cancel" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
+    SPAlertAction *action3 = [SPAlertAction actionWithTitle:@"Cancel" style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
         NSLog(@"点击了Cancel");
     }];
     [alertController addAction:action1];
@@ -975,6 +1061,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavi];
+    [[SPAlertStyle sharedInstance] setActionHeight:30];
+    [[SPAlertStyle sharedInstance] setLineWidth:0];
     dic = [NSMutableDictionary dictionaryWithCapacity:2];
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
@@ -1044,7 +1132,8 @@
         sender.backgroundColor = [UIColor orangeColor];
         if (!_haveBg) {
             SPAlertController *alertVc = [SPAlertController alertControllerWithTitle:@"提示" message:@"切换背景看毛玻璃效果更明显哦！" preferredStyle:SPAlertControllerStyleAlert];
-            SPAlertAction *action = [SPAlertAction actionWithTitle:@"知道了" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+            SPAlertAction *action = [SPAlertAction actionWithTitle:@"知道了" style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action, SPAlertController *alertController) {
+                [alertController dismissViewControllerAnimated:true completion:nil];
                 
             }];
             [alertVc addAction:action];

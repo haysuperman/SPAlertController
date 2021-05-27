@@ -21,15 +21,14 @@
 		09810FD021C4F90300E702E1 /* image0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09810FC221C4F90300E702E1 /* image0.jpg */; };
 		09810FD121C4F90300E702E1 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09810FC321C4F90300E702E1 /* image2.jpg */; };
 		09810FD321C4F90300E702E1 /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09810FC521C4F90300E702E1 /* image3.jpg */; };
+		438A17A3265F2AD600B7C829 /* SPAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438A17A1265F2AD600B7C829 /* SPAlertController.m */; };
 		522C267021D0C31F004EBDEB /* HCSStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522C266F21D0C31F004EBDEB /* HCSStarRatingView.m */; };
 		522C267321D0C422004EBDEB /* ScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522C267221D0C422004EBDEB /* ScoreView.m */; };
 		522C267A21D0D0B7004EBDEB /* SPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522C267921D0D0B7004EBDEB /* SPTextView.m */; };
 		522C267D21D0D5B2004EBDEB /* SendAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522C267C21D0D5B2004EBDEB /* SendAlertView.m */; };
 		522C267F21D0D5F0004EBDEB /* SendAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522C267E21D0D5F0004EBDEB /* SendAlertView.xib */; };
 		522C268621D0E40A004EBDEB /* send1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 522C268121D0E409004EBDEB /* send1.jpeg */; };
-		5270519A22EE9FF50016D0DB /* SPAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F6A5E921B6101D006AF8CC /* SPAlertController.m */; };
 		5270519B22EE9FF50016D0DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F6A5C521B60F86006AF8CC /* main.m */; };
-		5270519C22EEAF000016D0DB /* SPAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F6A5E921B6101D006AF8CC /* SPAlertController.m */; };
 		5270519D22EEAF410016D0DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F6A5B721B60F83006AF8CC /* AppDelegate.m */; };
 		5270519E22EEBC660016D0DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F6A5C521B60F86006AF8CC /* main.m */; };
 		52CB4ACC21B616E400B6090B /* MyCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4AB321B616E400B6090B /* MyCenterView.m */; };
@@ -86,6 +85,8 @@
 		09810FC221C4F90300E702E1 /* image0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image0.jpg; sourceTree = "<group>"; };
 		09810FC321C4F90300E702E1 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
 		09810FC521C4F90300E702E1 /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpg; sourceTree = "<group>"; };
+		438A17A1265F2AD600B7C829 /* SPAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPAlertController.m; path = ../../../SPAlertController/SPAlertController.m; sourceTree = "<group>"; };
+		438A17A2265F2AD600B7C829 /* SPAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPAlertController.h; path = ../../../SPAlertController/SPAlertController.h; sourceTree = "<group>"; };
 		522C266E21D0C31F004EBDEB /* HCSStarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCSStarRatingView.h; sourceTree = "<group>"; };
 		522C266F21D0C31F004EBDEB /* HCSStarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCSStarRatingView.m; sourceTree = "<group>"; };
 		522C267121D0C422004EBDEB /* ScoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreView.h; sourceTree = "<group>"; };
@@ -130,8 +131,6 @@
 		52F6A5D621B60F86006AF8CC /* SPAlertControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPAlertControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F6A5DA21B60F86006AF8CC /* SPAlertControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPAlertControllerUITests.m; sourceTree = "<group>"; };
 		52F6A5DC21B60F86006AF8CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52F6A5E921B6101D006AF8CC /* SPAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAlertController.m; sourceTree = "<group>"; };
-		52F6A5EA21B6101D006AF8CC /* SPAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAlertController.h; sourceTree = "<group>"; };
 		BB05FF062455887700950629 /* UIColor+DarkMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+DarkMode.h"; sourceTree = "<group>"; };
 		BB05FF072455887700950629 /* UIColor+DarkMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DarkMode.m"; sourceTree = "<group>"; };
 		BB5EA69C2457C75E005AE698 /* send0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = send0.jpeg; sourceTree = "<group>"; };
@@ -192,6 +191,15 @@
 				BB5EA69C2457C75E005AE698 /* send0.jpeg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		438A17A0265F2ABD00B7C829 /* SPAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				438A17A2265F2AD600B7C829 /* SPAlertController.h */,
+				438A17A1265F2AD600B7C829 /* SPAlertController.m */,
+			);
+			path = SPAlertController;
 			sourceTree = "<group>";
 		};
 		522C267421D0CF91004EBDEB /* CustomView1 */ = {
@@ -309,7 +317,7 @@
 		52F6A5B521B60F83006AF8CC /* SPAlertController */ = {
 			isa = PBXGroup;
 			children = (
-				52F6A5E821B6101D006AF8CC /* SPAlertController */,
+				438A17A0265F2ABD00B7C829 /* SPAlertController */,
 				52F6A5B621B60F83006AF8CC /* AppDelegate.h */,
 				52F6A5B721B60F83006AF8CC /* AppDelegate.m */,
 				52F6A5B921B60F83006AF8CC /* ViewController.h */,
@@ -343,15 +351,6 @@
 				52F6A5DC21B60F86006AF8CC /* Info.plist */,
 			);
 			path = SPAlertControllerUITests;
-			sourceTree = "<group>";
-		};
-		52F6A5E821B6101D006AF8CC /* SPAlertController */ = {
-			isa = PBXGroup;
-			children = (
-				52F6A5EA21B6101D006AF8CC /* SPAlertController.h */,
-				52F6A5E921B6101D006AF8CC /* SPAlertController.m */,
-			);
-			path = SPAlertController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,10 +502,10 @@
 			files = (
 				5270519E22EEBC660016D0DB /* main.m in Sources */,
 				5270519D22EEAF410016D0DB /* AppDelegate.m in Sources */,
-				5270519C22EEAF000016D0DB /* SPAlertController.m in Sources */,
 				522C267A21D0D0B7004EBDEB /* SPTextView.m in Sources */,
 				090BCB9221CEA18300057E1F /* PopView.m in Sources */,
 				52CB4ACF21B616E400B6090B /* ShoppingCartItem.m in Sources */,
+				438A17A3265F2AD600B7C829 /* SPAlertController.m in Sources */,
 				52F6A5BB21B60F83006AF8CC /* ViewController.m in Sources */,
 				522C267D21D0D5B2004EBDEB /* SendAlertView.m in Sources */,
 				52CB4AD321B616E400B6090B /* PassWordView.m in Sources */,
@@ -529,7 +528,6 @@
 			files = (
 				52F6A5D021B60F86006AF8CC /* SPAlertControllerTests.m in Sources */,
 				5270519B22EE9FF50016D0DB /* main.m in Sources */,
-				5270519A22EE9FF50016D0DB /* SPAlertController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,14 +691,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AYQTA2673R;
+				DEVELOPMENT_TEAM = E2E3Y33T45;
 				INFOPLIST_FILE = SPAlertController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 4.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.idress.SPAlertController;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idress.SPAlertController.aa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -711,14 +709,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AYQTA2673R;
+				DEVELOPMENT_TEAM = E2E3Y33T45;
 				INFOPLIST_FILE = SPAlertController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 4.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.idress.SPAlertController;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idress.SPAlertController.aa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class SPAlertController;
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, SPAlertControllerStyle) {
@@ -40,9 +42,15 @@ typedef NS_ENUM(NSInteger, SPAlertActionStyle) {
 
 // ===================================================== SPAlertAction =====================================================
 
+@interface SPAlertStyle : NSObject
++ (instancetype)sharedInstance;
+@property(nonatomic, assign) CGFloat lineWidth;
+@property(nonatomic, assign) CGFloat actionHeight;
+@end
+
 @interface SPAlertAction : NSObject <NSCopying>
 
-+ (instancetype)actionWithTitle:(nullable NSString *)title style:(SPAlertActionStyle)style handler:(void (^ __nullable)(SPAlertAction *action))handler;
++ (instancetype)actionWithTitle:(nullable NSString *)title style:(SPAlertActionStyle)style handler:(void (^ __nullable)(SPAlertAction *action, SPAlertController *alertController))handler;
 
 /** action的标题 */
 @property(nullable, nonatomic, copy) NSString *title;

@@ -11,12 +11,48 @@
 #define SP_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SP_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
-#define SP_LINE_WIDTH 1.0 / [UIScreen mainScreen].scale
+#define SP_LINE_WIDTH [[SPAlertStyle sharedInstance] lineWidth]
 
-#define Is_iPhoneX MAX(SP_SCREEN_WIDTH, SP_SCREEN_HEIGHT) >= 812
+#define Is_iPhoneX MAX(SP_SCREEN_WIDTH, S P_SCREEN_HEIGHT) >= 812
 #define SP_STATUS_BAR_HEIGHT (Is_iPhoneX ? 44 : 20)
 #define SP_ACTION_TITLE_FONTSIZE 18
-#define SP_ACTION_HEIGHT 55.0
+#define SP_ACTION_HEIGHT [[SPAlertStyle sharedInstance] actionHeight]
+
+@interface SPAlertStyle ()
+
+@end
+@implementation SPAlertStyle
+
+- (CGFloat)lineWidth
+{
+//    if (!_lineWidth) {
+//        return 1.0 / [UIScreen mainScreen].scale;
+//    }
+    return _lineWidth;
+}
+
+- (CGFloat)actionHeight
+{
+    if (!_actionHeight) {
+        return 55.0;
+    }
+    return _actionHeight;
+}
+
++ (instancetype)sharedInstance {
+    static dispatch_once_t onceToken;
+    static SPAlertStyle *instance = nil;
+    dispatch_once(&onceToken, ^{
+        instance = [[super allocWithZone:NULL] init];
+    });
+    return instance;
+}
+
++ (id)allocWithZone:(struct _NSZone *)zone {
+    return [self sharedInstance];
+}
+
+@end
 
 @interface SPColorStyle : NSObject
 
@@ -127,7 +163,7 @@
 @interface SPAlertAction()
 
 @property (nonatomic, assign) SPAlertActionStyle style;
-@property (nonatomic, copy) void (^handler)(SPAlertAction *action);
+@property (nonatomic, copy) void (^handler)(SPAlertAction *action, SPAlertController *alertController);
 // 当在addAction之后设置action属性时,会回调这个block,设置相应控件的字体、颜色等
 // 如果没有这个block，那使用时，只有在addAction之前设置action的属性才有效
 @property (nonatomic, copy) void (^propertyChangedBlock)(SPAlertAction *action, BOOL needUpdateConstraints);
@@ -153,12 +189,12 @@
     return action;
 }
 
-+ (instancetype)actionWithTitle:(nullable NSString *)title style:(SPAlertActionStyle)style handler:(void (^ __nullable)(SPAlertAction *action))handler {
++ (instancetype)actionWithTitle:(nullable NSString *)title style:(SPAlertActionStyle)style handler:(void (^ __nullable)(SPAlertAction *action, SPAlertController *alertController))handler {
     SPAlertAction *action = [[self alloc] initWithTitle:title style:(SPAlertActionStyle)style handler:handler];
     return action;
 }
 
-- (instancetype)initWithTitle:(nullable NSString *)title style:(SPAlertActionStyle)style handler:(void (^ __nullable)(SPAlertAction *action))handler {
+- (instancetype)initWithTitle:(nullable NSString *)title style:(SPAlertActionStyle)style handler:(void (^ __nullable)(SPAlertAction *action, SPAlertController *alertController))handler {
     self = [self init];
     self.title = title;
     self.style = style;
@@ -2068,10 +2104,11 @@ UIEdgeInsets UIEdgeInsetsAddEdgeInsets(UIEdgeInsets i1,UIEdgeInsets i2) {
         actionSequenceView.translatesAutoresizingMaskIntoConstraints = NO;
         __weak typeof(self) weakSelf = self;
         actionSequenceView.buttonClickedInActionViewBlock = ^(NSInteger index) {
-            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
+//            [weakSelf dismissViewControllerAnimated:YES completion:nil];
             SPAlertAction *action = weakSelf.actions[index];
             if (action.handler) {
-                action.handler(action);
+                action.handler(action, strongSelf);
             }
         };
         if (self.actions.count && !self.customActionSequenceView) {
